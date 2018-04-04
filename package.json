@@ -23,6 +23,7 @@
   "dependencies": {
     "amqplib": "^0.4.1",
     "bluebird": "^3.3.5",
+    "buffer": "^5.1.0",
     "winston": "^2.2.0"
   },
   "devDependencies": {

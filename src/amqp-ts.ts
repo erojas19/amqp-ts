@@ -13,7 +13,7 @@ import * as Promise from "bluebird";
 import * as winston from "winston";
 import * as path from "path";
 import * as os from "os";
-
+import { Buffer } from 'buffer';
 var ApplicationName = process.env.AMQPTS_APPLICATIONNAME ||
   (path.parse ? path.parse(process.argv[1]).name : path.basename(process.argv[1]));
 
@@ -49,7 +49,7 @@ export class Connection {
   _queues: { [id: string]: Queue };
   _bindings: { [id: string]: Binding };
 
-  constructor(url = "amqp://localhost",
+  constructor(url = "amqp://test:test@localhost:5672/",
     socketOptions: any = {},
     reconnectStrategy: Connection.ReconnectStrategy = { retries: 0, interval: 1500 }) {
     this.url = url;
